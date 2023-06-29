@@ -29,17 +29,17 @@ pipeline{
                 sh "npm run build"
             }
         }
-        stage ("Despliegue en dev"){
+        when (branch 'dev'){
             steps{
                 sh 'scp dist/AngularApp/* root@206.189.254.187:/usr/ucreativa/sebas-dev/'
             }
         }
-        stage ("Despliegue en staging"){
+        when (branch 'staging'){
             steps{
                 sh "scp dist/AngularApp/* root@206.189.254.187:/usr/ucreativa/sebas-staging/"
             }
         }
-        stage ("Despliegue en prod"){
+        when (branch "main"){
             steps{
                 sh "scp dist/AngularApp/* root@206.189.254.187:/usr/ucreativa/sebas-prod/"
             }
