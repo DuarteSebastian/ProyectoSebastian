@@ -1,5 +1,5 @@
 pipeline{
-    agent linux-agent
+    agent "{linux-agent}"
 
     stages{
 
