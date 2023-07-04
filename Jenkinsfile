@@ -41,32 +41,23 @@ pipeline{
             }
         }
 
-        /*post{
-            success {
-                emailext body: "La prueba ha finalizado con exito", subject: "Aviso", to: "sebasucreativa123@gmail.com"
-            }
-            failure {
-                emailext body: "La prueba no finalizo con exito", subject: "Aviso", to: "sebasucreativa123@gmail.com"
-            }
-        }*/
-
         /*
         when (branch 'dev'){
             steps{
                 sh 'scp dist/AngularApp/* root@206.189.254.187:/usr/ucreativa/sebas-dev/'
             }
-        }
-        when (branch 'staging'){
+        }*/
+        /*when (branch 'staging'){
             steps{
                 sh "scp dist/AngularApp/* root@206.189.254.187:/usr/ucreativa/sebas-staging/"
             }
-        }
+        }*/
         when (branch "main"){
             steps{
                 sh "scp dist/AngularApp/* root@206.189.254.187:/usr/ucreativa/sebas-prod/"
             }
         }
-        */
+        
     }
 
     post{
