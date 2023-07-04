@@ -56,7 +56,7 @@ pipeline{
 
         stage ("Deploy al servidor"){
             steps{
-                sh 'sh "scp dist/angular-app/* root@206.189.254.187:/usr/ucreativa/sebas-prod/'
+                sh 'scp dist/angular-app/* root@206.189.254.187:/usr/ucreativa/sebas-prod/'
             }
         }
 
