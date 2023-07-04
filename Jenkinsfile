@@ -48,7 +48,7 @@ pipeline{
             }
         }
 
-        stage ("Deploy al servidor"){
+        stage ("Carpetas"){
             steps{
                 sh 'ls -la dist/'
             }
