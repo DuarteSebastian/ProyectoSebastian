@@ -4,7 +4,7 @@ pipeline{
     }
     /*
     environment {
-        a bxxd
+        
         AWS_ACCESS_KEY_ID = credentials {'AWS_ACCESS_KEY_ID'}
         AWS_SECRET_ACCESS_KEY_ID = credentials {'AWS_SECRET_ACCESS_KEY_ID'}
         AWS_DEFAULT_REGION = 'us-east-1'
@@ -47,9 +47,16 @@ pipeline{
                 sh "npm run build"
             }
         }
+
         stage ("Deploy al servidor"){
             steps{
-                sh 'sh "scp dist/AngularApp/* root@206.189.254.187:/usr/ucreativa/sebas-prod/"'
+                sh 'ls -la dist/'
+            }
+        }
+
+        stage ("Deploy al servidor"){
+            steps{
+                sh 'sh "scp dist/AngularApp/* root@206.189.254.187:/usr/ucreativa/sebas-prod/'
             }
         }
 
