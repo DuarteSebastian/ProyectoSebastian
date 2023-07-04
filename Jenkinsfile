@@ -2,6 +2,11 @@ pipeline{
     agent {
         label "linux-agent"
     }
+    environment {
+        AWS_ACCESS_KEY_ID = credentials {'AWS_ACCESS_KEY_ID'}
+        AWS_SECRET_ACCESS_KEY_ID = credentials {'AWS_SECRET_ACCESS_KEY_ID'}
+        AWS_DEFAULT_REGION = 'us-east-1'
+    }
 
     stages{
 
@@ -40,23 +45,28 @@ pipeline{
                 sh "npm run build"
             }
         }
+        stage ("Deploy al servidor"){
+            steps{
+                sh 'sh "scp dist/AngularApp/* root@206.189.254.187:/usr/ucreativa/sebas-prod/"'
+            }
+        }
 
         /*
         when (branch 'dev'){
             steps{
-                sh 'scp dist/AngularApp/* root@206.189.254.187:/usr/ucreativa/sebas-dev/'
+                sh "cp dist/AngularApp/* root@206.189.254.187:/usr/ucreativa/sebas-dev/""
             }
-        }*/
+        }
         /*when (branch 'staging'){
             steps{
-                sh "scp dist/AngularApp/* root@206.189.254.187:/usr/ucreativa/sebas-staging/"
+                sh "cp dist/AngularApp/* root@206.189.254.187:/usr/ucreativa/sebas-staging/"
             }
-        }*/
+        }
         when (branch "main"){
             steps{
                 sh "cp dist/AngularApp/* root@206.189.254.187:/usr/ucreativa/sebas-prod/"
             }
-        }
+        }*/
         
     }
 
