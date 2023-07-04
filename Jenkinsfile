@@ -60,7 +60,7 @@ pipeline{
             }
         }
 */
-        
+        /*
         when (branch 'dev'){
             steps{
                 sh "scp dist/AngularApp/* root@206.189.254.187:/usr/ucreativa/sebas-dev/"
@@ -70,7 +70,7 @@ pipeline{
             steps{
                 sh "scp dist/AngularApp/* root@206.189.254.187:/usr/ucreativa/sebas-staging/"
             }
-        }
+        }*/
         when (branch "main"){
             steps{
                 sh "scp dist/AngularApp/* root@206.189.254.187:/usr/ucreativa/sebas-prod/"
