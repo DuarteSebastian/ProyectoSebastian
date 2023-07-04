@@ -4,7 +4,7 @@ pipeline{
     }
     /*
     environment {
-        a 
+        a bxxd
         AWS_ACCESS_KEY_ID = credentials {'AWS_ACCESS_KEY_ID'}
         AWS_SECRET_ACCESS_KEY_ID = credentials {'AWS_SECRET_ACCESS_KEY_ID'}
         AWS_DEFAULT_REGION = 'us-east-1'
