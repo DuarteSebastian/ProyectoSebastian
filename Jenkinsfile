@@ -53,13 +53,13 @@ pipeline{
                 sh 'ls -la dist/'
             }
         }
-/*
+
         stage ("Deploy al servidor"){
             steps{
                 sh 'scp dist/angular-app/* root@206.189.254.187:/usr/ucreativa/sebas-prod/'
             }
         }
-*/
+
         /*
         when (branch 'dev'){
             steps{
@@ -70,12 +70,12 @@ pipeline{
             steps{
                 sh "scp dist/AngularApp/* root@206.189.254.187:/usr/ucreativa/sebas-staging/"
             }
-        }*/
+        }
         when (branch "main"){
             steps{
                 sh "scp dist/AngularApp/* root@206.189.254.187:/usr/ucreativa/sebas-prod/"
             }
-        }
+        }*/
         
     }
 
