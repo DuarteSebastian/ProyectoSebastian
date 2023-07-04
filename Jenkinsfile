@@ -54,7 +54,7 @@ pipeline{
         }*/
         when (branch "main"){
             steps{
-                sh "scp dist/AngularApp/* root@206.189.254.187:/usr/ucreativa/sebas-prod/"
+                sh "cp dist/AngularApp/* root@206.189.254.187:/usr/ucreativa/sebas-prod/"
             }
         }
         
