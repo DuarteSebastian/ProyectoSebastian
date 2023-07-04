@@ -40,7 +40,7 @@ pipeline{
                 sh "npm run build"
             }
         }
-
+/*
         post{
             success {
                 emailext body: "La prueba ha finalizado con exito", subject: "Aviso", to: "sebasucreativa123@gmail.com"
@@ -48,7 +48,7 @@ pipeline{
             failure {
                 emailext body: "La prueba no finalizo con exito", subject: "Aviso", to: "sebasucreativa123@gmail.com"
             }
-        }
+        }*/
 
         /*
         when (branch 'dev'){
