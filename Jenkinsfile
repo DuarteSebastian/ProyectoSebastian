@@ -35,6 +35,12 @@ pipeline{
             }
         }*/
 
+        stage ("Compilacion de la aplicacion"){
+            steps{
+                sh "npm run build"
+            }
+        }
+
         post{
             success {
                 emailext body: "La prueba ha finalizado con exito", subject: "Aviso", to: "sebasucreativa123@gmail.com"
@@ -44,11 +50,6 @@ pipeline{
             }
         }
 
-        stage ("Compilacion de la aplicacion"){
-            steps{
-                sh "npm run build"
-            }
-        }
         /*
         when (branch 'dev'){
             steps{
