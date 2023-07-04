@@ -53,29 +53,29 @@ pipeline{
                 sh 'ls -la dist/'
             }
         }
-
+/*
         stage ("Deploy al servidor"){
             steps{
                 sh 'scp dist/angular-app/* root@206.189.254.187:/usr/ucreativa/sebas-prod/'
             }
         }
-
-        /*
+*/
+        
         when (branch 'dev'){
             steps{
-                sh "cp dist/AngularApp/* root@206.189.254.187:/usr/ucreativa/sebas-dev/""
+                sh "scp dist/AngularApp/* root@206.189.254.187:/usr/ucreativa/sebas-dev/"
             }
         }
-        /*when (branch 'staging'){
+        when (branch 'staging'){
             steps{
-                sh "cp dist/AngularApp/* root@206.189.254.187:/usr/ucreativa/sebas-staging/"
+                sh "scp dist/AngularApp/* root@206.189.254.187:/usr/ucreativa/sebas-staging/"
             }
         }
         when (branch "main"){
             steps{
-                sh "cp dist/AngularApp/* root@206.189.254.187:/usr/ucreativa/sebas-prod/"
+                sh "scp dist/AngularApp/* root@206.189.254.187:/usr/ucreativa/sebas-prod/"
             }
-        }*/
+        }
         
     }
 
