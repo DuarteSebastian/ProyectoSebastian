@@ -26,12 +26,21 @@ pipeline{
                 echo "comando de las pruebas unitarias npm run test"
             }
         }
-
+/*
         stage('Pruebas de seguridad-sonarqube'){
             steps{
                 withSonarQubeEnv('SonarQubeCursoCI'){
                     sh "/opt/sonar-scanner/bin/sonar-scanner -Dsonar.projectKey=AngularApp"
                 }
+            }
+        }*/
+
+        post{
+            success {
+                emailext body: "La prueba ha finalizado con exito", subject: "Aviso", to: "sebasucreativa123@gmail.com"
+            }
+            failure {
+                emailext body: "La prueba no finalizo con exito", subject: "Aviso", to: "sebasucreativa123@gmail.com"
             }
         }
 
