@@ -14,12 +14,12 @@ pipeline{
               echo "comenzando deploy"
             }
         }
-/*
+
         stage("Intalacion de dependencias"){
             steps{
                 sh "npm install"
             }
-        }*/
+        }
         
         stage ("Prueba unitaria"){
             steps{
