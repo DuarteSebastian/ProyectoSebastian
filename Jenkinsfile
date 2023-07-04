@@ -26,14 +26,14 @@ pipeline{
                 echo "comando de las pruebas unitarias npm run test"
             }
         }
-/*
+
         stage('Pruebas de seguridad-sonarqube'){
             steps{
                 withSonarQubeEnv('SonarQubeCursoCI'){
                     sh "/opt/sonar-scanner/bin/sonar-scanner -Dsonar.projectKey=AngularApp"
                 }
             }
-        }*/
+        }
 
         stage ("Compilacion de la aplicacion"){
             steps{
