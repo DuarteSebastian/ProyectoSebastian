@@ -41,14 +41,14 @@ pipeline{
             }
         }
 
-        post{
+        /*post{
             success {
                 emailext body: "La prueba ha finalizado con exito", subject: "Aviso", to: "sebasucreativa123@gmail.com"
             }
             failure {
                 emailext body: "La prueba no finalizo con exito", subject: "Aviso", to: "sebasucreativa123@gmail.com"
             }
-        }
+        }*/
 
         /*
         when (branch 'dev'){
@@ -68,6 +68,15 @@ pipeline{
         }
         */
     }
+
+    post{
+        success {
+            emailext body: "La prueba ha finalizado con exito", subject: "Aviso", to: "sebasucreativa123@gmail.com"
+        }
+        failure {
+            emailext body: "La prueba no finalizo con exito", subject: "Aviso", to: "sebasucreativa123@gmail.com"
+        }
+     }
 
     
 }
