@@ -8,7 +8,7 @@ pipeline{
         stage("aprobar despliegue"){
             input{
                 message "¿Desea comenzar el despliegue?"
-                ok "Si"
+                ok "correcto"
             }
             steps{
               echo "comenzando deploy"
